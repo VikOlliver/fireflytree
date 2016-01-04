@@ -1,6 +1,12 @@
 /* fireflytree - lights up a matrix of LED "fireflies"
 
- (C)2016 vik@diamondage.co.nz GPLv3 applies
+    Uses a configurable array of row pins and column pins to drive a
+    flickering LED matrix of pseudo-random lights.
+
+    A piezo may be connected to GND/D6, pulled to 3.3V by a 1M resistor.
+    When this is flexed or shaken a whole bunch of fireflies light up.
+
+    (C)2016 vik@diamondage.co.nz GPLv3 applies
  */
 
 #define MAX_ROWS  3
