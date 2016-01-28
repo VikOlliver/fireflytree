@@ -3,8 +3,8 @@
     Uses a configurable array of row pins and column pins to drive a
     flickering LED matrix of pseudo-random lights.
 
-    A piezo may be connected to GND/D6, pulled to 3.3V by a 1M resistor.
-    When this is flexed or shaken a whole bunch of fireflies light up.
+    A microphone module may be connected to TAP_PIN.
+    When this is activated or knocked a whole bunch of fireflies light up.
 
     (C)2016 vik@diamondage.co.nz GPLv3 applies
  */
@@ -19,7 +19,7 @@
 #define DIM_MAX      (FIRE_DIM_MAX>>DIM_SHIFT)  // Calc number of pulses
 #define MS_DELAY      50  // ms per dimming pulse
 
-#define TAP_PIN  6
+#define TAP_PIN  A5    // A6 and A7 *will not* work
 #define BLINK_PIN  13
 
 int ledMatrix[MAX_COLS][MAX_ROWS];
@@ -63,7 +63,7 @@ void displayMatrix() {
           }
         }
         // If the sensor has been tapped, flag it.
-        if ((digitalRead(TAP_PIN)==LOW)&&(digitalRead(TAP_PIN)==LOW)) wasTapped=true;
+        if (digitalRead(TAP_PIN)==HIGH) wasTapped=true;
       }
     }    
 }
