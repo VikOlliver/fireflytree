@@ -10,7 +10,7 @@
  */
 
 #define MAX_ROWS  3
-#define MAX_COLS  5
+#define MAX_COLS  4
 
 #define NORMAL_FIREFLIES  4
 #define MAX_FIREFLIES     min(12,MAX_ROWS*MAX_COLS)  // Maximum 12 firelfies or full matrix
@@ -91,6 +91,21 @@ void setup() {
   int i;
   pinMode(TAP_PIN,INPUT);
   pinMode(BLINK_PIN,OUTPUT);
+  digitalWrite(BLINK_PIN,HIGH);
+  delay(100);
+  digitalWrite(BLINK_PIN,LOW);
+  delay(100);
+  digitalWrite(BLINK_PIN,HIGH);
+  delay(100);
+  digitalWrite(BLINK_PIN,LOW);
+  delay(100);
+  digitalWrite(BLINK_PIN,HIGH);
+  delay(100);
+  digitalWrite(BLINK_PIN,LOW);
+  delay(100);
+  digitalWrite(BLINK_PIN,HIGH);
+  delay(100);
+  digitalWrite(BLINK_PIN,LOW);
   // Set all row/col pins and blank the output
   for (i=0; i<MAX_ROWS; i++) {
     pinMode(rowpins[i],OUTPUT);
